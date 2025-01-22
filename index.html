@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--esta linea contro que la pagina web sea vean bien en movil-->
+    <title>Pagina Simple</title>
+    <!--  enlace al archivo css-->
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <!-- vide de fondo -->
+
+    <div class="background-overlay"></div>
+
+    <div class="page">
+        <div class="volumen-control-container">
+            <span class="volume-icon">🔊</span>
+            <input type="range" id="volumen-control" min="0" max="100" value="50" title="Control de Volumen">
+            <span id="volume-value"></span>
+        </div>
+        <div class="container">
+            <!--IMAGEN 1 CON LA CANCION 1-->
+            <div class="song">
+                <div class="image-wrapper">
+                    <img src="raund5.jpg" alt="Imagen 1">
+                </div>    
+                <audio id="audio_raund5" src="raund5_recortado_.mp3"></audio> <!-- audio asociado a la imagen-->
+                <video class="song-video" src="Raund5(recortado).mp4" muted></video> <!-- video asociado -->
+            </div>
+            <!--IMAGEN 2 CON LA CANCION 2-->
+            <div class="song">
+                <div class="image-wrapper">
+                    <img src="hyuna.jpg" alt="Imagen 2"> 
+                </div>
+                <audio id="audio_all_in" src="all_in_recortado_.mp3"></audio>
+                <video class="song-video" src="Allin(recortado).mp4" muted></video> <!-- video asociado -->
+            </div>
+            <!--IMAGEN 3 CON LA CANCION 3-->
+            <div class="song">
+                <div class="image-wrapper">
+                    <img src="raundFinal.jpg" alt="Imagen 3">
+                </div>
+                <audio id="final_alienStage" src="final_alienStage_recortado_.mp3"></audio>
+                <video class="song-video" src="finalRaund(recortado).mp4" muted></video> <!-- video asociado -->
+            </div>    
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
