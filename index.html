@@ -1145,7 +1145,7 @@ body {
     width: 0ch; /* Inicia en 0 caracteres */
   }
   to {
-    width: 22ch; /* Ajusta según la cantidad de letras */
+    width: 13ch; /* Ajusta según la cantidad de letras */
   }
 }
 
@@ -1720,11 +1720,12 @@ h1 {
 
     </style>
   </head>
+  <audio id="bgMusic" src="assets/best-part.mp3" preload="auto" loop></audio>
   <body class="container">
 
      <!-- Pantalla oscura de inicio --> 
     <div id="pantallaInicio" class="pantalla-inicio">
-      <button id="botonInicio" class="boton-inicio">Si no le das click, un gatito hará la moricion uu </button>
+      <button id="botonInicio" class="boton-inicio">Dale click o lloro :(</button>
     </div>
 
     <div id="contenido">
@@ -1733,7 +1734,7 @@ h1 {
       Las flores amarillas simbolizan la felicidad. <br>
        Tú eres la mía❤️</h1>
 
-    <h1 class="escribiendo">Para mi leona preciosa :3</h1>   
+    <h1 class="escribiendo">Para mi leona:3 </h1>   
    
     <div class="night"></div>
     <div class="flowers">
@@ -2047,15 +2048,27 @@ h1 {
     </div>
     </div>
 
-    <script>
-      document.getElementById("botonInicio").addEventListener("click", function() {
-        // Ocultar la pantalla de inicio
-        document.getElementById("pantallaInicio").style.display = "none";
-    
-        // Mostrar el contenido de la animación
-        document.getElementById("contenido").style.display = "block";
-      });
-    </script>
+<script>
+  document.getElementById("botonInicio").addEventListener("click", function () {
+    // Ocultar la pantalla de inicio
+    document.getElementById("pantallaInicio").style.display = "none";
+
+    // Mostrar el contenido de la animación
+    document.getElementById("contenido").style.display = "block";
+
+    // Reproducir música
+    const music = document.getElementById("bgMusic");
+    if (music) {
+      music.volume = 0.6; // 0.0 a 1.0 (ajústalo a tu gusto)
+      const playPromise = music.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn("El navegador bloqueó la reproducción:", err);
+        });
+      }
+    }
+  });
+</script>
 
   </body>
 </html>
