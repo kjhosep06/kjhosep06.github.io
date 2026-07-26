@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&display=swap');
+
+/* Elimina los márgenes predeterminados del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración general de la página */
+body {
+    min-height: 100vh;
+    font-family: "Fredoka", sans-serif;
+
+    background-image: url("../imagenes/snoopy enter.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* Pantalla principal */
+.pantalla-inicio {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* Caja donde estará la contraseña */
+.contenedor-clave {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background-color: rgba(255, 250, 252, 0.92);
+
+    border: 3px solid #c88ca2;
+    border-radius: 25px;
+
+    box-shadow: 0 12px 30px rgba(180, 110, 140, 0.3);
+}
+
+/* Título */
+.contenedor-clave h1 {
+    margin-bottom: 15px;
+
+    font-family: "Pacifico", cursive;
+    font-size: 34px;
+    font-weight: normal;
+
+    color: #c8708f;
+
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+/* Texto de la pista */
+.pista {
+    margin-bottom: 20px;
+
+    font-size: 15px;
+    color: #333333;
+}
+
+/* Contenedor de las cuatro casillas */
+.casillas-clave {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+/* Cada casilla de la contraseña */
+.casillas-clave input {
+    width: 55px;
+    height: 60px;
+
+    border: 2px solid #c88ca2;
+    border-radius: 12px;
+
+    background-color: #fff7fa;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+
+    color: #b45f7b;
+
+    box-shadow: inset 0 2px 5px rgba(180, 110, 140, 0.1);
+}
+
+/* Teclado numérico */
+.teclado-numerico {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Todos los botones del teclado */
+.teclado-numerico button {
+    min-height: 55px;
+
+    border: 2px solid #a86b83;
+    border-radius: 15px;
+
+    background-color: #cfa8d8;
+    color: #ffffff;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 8px rgba(180, 120, 150, 0.25);
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+/* Efecto cuando el cursor pasa por un botón */
+.teclado-numerico button:hover {
+    background-color: #e2bfdc;
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 12px rgba(180, 120, 150, 0.3);
+}
+
+/* Efecto cuando se presiona un botón */
+.teclado-numerico button:active {
+    transform: scale(0.95);
+}
+
+/* Botón para borrar */
+#borrar {
+    background-color: #f3c98b;
+    border-color: #c79a58;
+    color: #6f4d27;
+}
+
+/* Botón para aceptar */
+#aceptar {
+    background-color: #a8d5ba;
+    border-color: #6fa283;
+    color: #355f47;
+}
+/* Fondo oscuro de la ventana de error */
+.ventana-error {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    z-index: 1000;
+}
+
+/* Caja interior del mensaje de error */
+.contenido-error {
+    width: 100%;
+    max-width: 350px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: #ffffff;
+
+    border: 3px solid #222222;
+    border-radius: 25px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Imagen de Snoopy triste */
+.contenido-error img {
+    width: 180px;
+    max-width: 100%;
+
+    margin-bottom: 15px;
+}
+
+/* Título del error */
+.contenido-error h2 {
+    margin-bottom: 8px;
+    color: #263b84;
+}
+
+/* Mensaje del error */
+.contenido-error p {
+    margin-bottom: 18px;
+    color: #333333;
+}
+
+/* Botón para cerrar el error */
+#cerrarError {
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #263b84;
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 500px) {
+    .contenedor-clave {
+        padding: 22px 15px;
+    }
+
+    .contenedor-clave h1 {
+        font-size: 25px;
+    }
+
+    .casillas-clave input {
+        width: 48px;
+        height: 55px;
+    }
+
+    .teclado-numerico button {
+        min-height: 50px;
+        font-size: 16px;
+    }
+}
