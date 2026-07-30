@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Fredoka", sans-serif;
+
+    background-image: url("../imagenes/snoopy enter.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.6s ease;
+}
+
+/* Capa oscura que ayuda a resaltar los videos */
+.capa-oscura {
+    position: fixed;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0);
+
+    pointer-events: none;
+    z-index: 0;
+
+    transition: background-color 0.5s ease;
+}
+
+/* Oscurece un poco más cuando se activa un fondo especial */
+body.fondo-activo .capa-oscura {
+    background-color: rgba(0, 0, 0, 0.48);
+}
+
+.pagina-nuevos-videos {
+    position: relative;
+    z-index: 1;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.encabezado {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.encabezado h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 42px;
+    font-weight: normal;
+
+    color: #c86f91;
+
+    /* Sombra mucho más suave */
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.35);
+
+    transition:
+        color 0.4s ease,
+        text-shadow 0.4s ease;
+}
+
+/* Título para La La Land */
+.encabezado h1.tema-lalaland {
+    color: #a9b2ec;
+
+    text-shadow:
+        0 0 10px rgba(84, 94, 160, 0.35);
+}
+
+/* Título para Teen Beach */
+.encabezado h1.tema-teenbeach {
+    color: #8edbe1;
+
+    text-shadow:
+        0 0 10px rgba(71, 171, 185, 0.3);
+}
+
+/* Título para Coraline */
+.encabezado h1.tema-coraline {
+    color: #aab5e8;
+
+    text-shadow:
+        0 0 10px rgba(77, 88, 145, 0.35);
+}
+
+
+.contenedor-videos {
+    width: 100%;
+    max-width: 1250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+
+    flex-wrap: wrap;
+}
+
+.tarjeta-video {
+    width: 285px;
+
+    padding: 8px 8px 12px;
+
+    background-color: rgba(255, 248, 251, 0.94);
+
+    border: 2px solid #d99ab2;
+    border-radius: 21px;
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.35);
+
+    text-align: center;
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.tarjeta-video:hover {
+    transform: translateY(-12px) scale(1.04);
+    z-index: 5;
+}
+
+.video {
+    display: block;
+
+    width: 100%;
+    height: 480px;
+
+    object-fit: cover;
+
+    background-color: #1a1a1a;
+
+    border-radius: 15px;
+}
+
+.tarjeta-video p {
+    margin-top: 12px;
+
+    color: #b86483;
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.tarjeta-video.atenuada {
+    opacity: 0.18;
+    transform: scale(0.94);
+    filter: blur(1px);
+    pointer-events: none;
+}
+
+.boton-regresar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    z-index: 10;
+
+    padding: 11px 18px;
+
+    background-color: rgba(255, 248, 251, 0.95);
+
+    border: 2px solid #d99ab2;
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+
+    color: #b86483;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.boton-regresar:hover {
+    transform: translateY(-3px);
+    background-color: #f6d8e3;
+}
+
+/* La La Land: azul nocturno y violeta suave */
+.tarjeta-lalaland:hover {
+    border-color: #7d86c9;
+    background-color: rgba(226, 227, 247, 0.96);
+
+    box-shadow:
+        0 22px 42px rgba(37, 44, 91, 0.55);
+}
+
+.tarjeta-lalaland:hover p {
+    color: #545d9b;
+}
+
+/* Teen Beach: amarillo arena y celeste */
+.tarjeta-teenbeach:hover {
+    border-color: #76c9d5;
+    background-color: rgba(247, 239, 198, 0.97);
+
+    box-shadow:
+        0 22px 42px rgba(68, 158, 174, 0.48);
+}
+
+.tarjeta-teenbeach:hover p {
+    color: #3f9aa8;
+}
+
+/* Coraline: azul oscuro y morado */
+.tarjeta-coraline:hover {
+    border-color: #5e699e;
+    background-color: rgba(214, 213, 232, 0.96);
+
+    box-shadow:
+        0 22px 42px rgba(29, 33, 67, 0.6);
+}
+
+.tarjeta-coraline:hover p {
+    color: #4c567f;
+}
+
+
+@media (max-width: 950px) {
+    .contenedor-videos {
+        gap: 30px;
+    }
+
+    .encabezado h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 550px) {
+    .pagina-nuevos-videos {
+        justify-content: flex-start;
+        padding-top: 80px;
+    }
+
+    .encabezado h1 {
+        font-size: 30px;
+    }
+
+    .tarjeta-video {
+        width: min(285px, 90vw);
+    }
+
+    .video {
+        height: 470px;
+    }
+}
